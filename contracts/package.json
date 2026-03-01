@@ -1,0 +1,37 @@
+{
+  "name": "blockforge-contracts",
+  "version": "1.0.0",
+  "description": "Composable DeFi Lego — OP_NET smart contracts",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:core",
+    "build:core": "asc src/core/index.ts --target release --config asconfig.json",
+    "build:vault": "asc src/modules/vault/index.ts --config asconfig.json --use abort=src/modules/vault/index/abort -o build/VaultModule.wasm --textFile build/VaultModule.wat",
+    "build:staking": "asc src/modules/staking/index.ts --config asconfig.json --use abort=src/modules/staking/index/abort -o build/StakingModule.wasm --textFile build/StakingModule.wat",
+    "build:timelock": "asc src/modules/timelock/index.ts --config asconfig.json --use abort=src/modules/timelock/index/abort -o build/TimeLockModule.wasm --textFile build/TimeLockModule.wat",
+    "build:escrow": "asc src/modules/escrow/index.ts --config asconfig.json --use abort=src/modules/escrow/index/abort -o build/EscrowModule.wasm --textFile build/EscrowModule.wat",
+    "build:all": "npm run build:core && npm run build:vault && npm run build:staking && npm run build:timelock && npm run build:escrow",
+    "deploy:ts": "tsx deploy.ts",
+    "deploy:core": "set WASM_PATH=./build/CoreContract.wasm&& npm run deploy:ts",
+    "deploy:vault": "set WASM_PATH=./build/VaultModule.wasm&& npm run deploy:ts",
+    "deploy:staking": "set WASM_PATH=./build/StakingModule.wasm&& npm run deploy:ts",
+    "deploy:timelock": "set WASM_PATH=./build/TimeLockModule.wasm&& npm run deploy:ts",
+    "deploy:escrow": "set WASM_PATH=./build/EscrowModule.wasm&& npm run deploy:ts",
+    "deploy:oneclick": "npm run build:core && npm run deploy:core",
+    "deploy:all": "npm run build:all && npm run deploy:core && npm run deploy:vault && npm run deploy:staking && npm run deploy:timelock && npm run deploy:escrow"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "@btc-vision/as-bignum": "^0.1.2",
+    "@btc-vision/assemblyscript": "^0.29.2",
+    "@btc-vision/bitcoin": "^7.0.0-rc.6",
+    "@btc-vision/btc-runtime": "^1.11.0-rc.10",
+    "@btc-vision/opnet-transform": "^1.2.0",
+    "@btc-vision/transaction": "^1.8.0-rc.10",
+    "dotenv": "^17.3.1",
+    "opnet": "^1.8.1-rc.17"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}

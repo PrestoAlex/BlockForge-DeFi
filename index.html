@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockForge — Composable DeFi Lego on Bitcoin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-btc-darker text-white font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.BLOCKFORGE_CORE_CONTRACT = "opt1sqqhcpkfntdr56g7j398ph2f07pculaw9qqxn5xgu";
+      window.BLOCKFORGE_VAULT_CONTRACT = "opt1sqpjs8vp7nnwgfmgk60uqk0k7rtef6w6tacq7l9nx";
+      window.BLOCKFORGE_STAKING_CONTRACT = "opt1sqpkqlgh6e0xmtfzktsm3xca50r5qjwkxms8k3nmu";
+      window.BLOCKFORGE_YIELD_CONTRACT = "opt1sqpkqlgh6e0xmtfzktsm3xca50r5qjwkxms8k3nmu";
+      window.BLOCKFORGE_TIMELOCK_CONTRACT = "opt1sqpmwu69vqtu5myrmmxe8lz2lym9k0nxrqg7d4vg3";
+      window.BLOCKFORGE_ESCROW_CONTRACT = "opt1sqptq8q4c7lrklrpwvkap4mzgug8ce0l0fs0w8uye";
+    </script>
+  </body>
+</html>
