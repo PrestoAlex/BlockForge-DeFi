@@ -70,7 +70,7 @@ export default function App() {
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("/assets/images/background.png")',
+          backgroundImage: 'url("/images/background.png")',
           zIndex: 0,
           animation: 'scrollUp 30s linear infinite',
           backgroundSize: 'cover'
