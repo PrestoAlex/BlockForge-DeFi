@@ -109,7 +109,7 @@ export default function Header({
         <div className="flex items-center gap-2">
           <div className="w-14 h-14 flex items-center justify-center overflow-visible relative">
             <img 
-              src="/assets/images/logo.png" 
+              src="/images/logo.png" 
               alt="BlockForge Logo" 
               className="w-full h-full object-contain scale-[3.4] cursor-pointer hover:scale-[3.6] transition-transform duration-200 relative z-10 translate-y-[10%]"
               onClick={handleLogoClick}
@@ -189,7 +189,7 @@ export default function Header({
       {/* Hidden Audio Element */}
       <audio
         ref={audioRef}
-        src="/assets/audio/background.mp3"
+        src="/audio/background.mp3"
         loop
         muted={isMuted}
         preload="auto"

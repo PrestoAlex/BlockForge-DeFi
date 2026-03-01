@@ -86,7 +86,7 @@ export default function AudioPlayer() {
     <>
       <audio
         ref={audioRef}
-        src="/assets/audio/background.mp3"
+        src="/audio/background.mp3"
         loop
         muted={isMuted}
         preload="auto"
